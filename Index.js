@@ -54,6 +54,45 @@ if (message.content.startsWith(prefix + "ban")) {
     message.reply(`${member.user.tag} a etait banni par ${message.author.tag} pour raison: ${reason}`);
 }})
 
+client.on("message", message => {
+if (message.content.startsWith(prefix + "help")) {
+const embed = new Discord.RichEmbed()
+  .setTitle("Zero-Bot Help Link")
+  .setAuthor("Zero-Bot help", "https://imgur.com/pXbFE37.jpg")
+  /*
+   * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+   */
+   
+  .setColor(0x00AE86)
+  .setDescription("Voici les commandes de Zero-Bot!")
+  .setFooter("Créer par OndoRunya & Temakisushi", "https://imgur.com/pXbFE37.png")
+  .setImage("https://imgur.com/pXbFE37.jpg")
+  .setThumbnail("https://imgur.com/pXbFE37.png")
+  /*
+   * Takes a Date object, defaults to current date.
+   */
+  .setTimestamp()
+  .setURL("https://discord.com/channels/733585317365547029/733585317365547032")
+  .addField(prefix + "clear (a venir) : ",
+    "Suprimmer de 1 a 99 message sur un channel specifique usage : $clear <nombre>")
+    
+    
+  .addField(prefix + "kick : ", "Expulsez un utilisateur avec raison ou non", true)
+  
+  .addField(prefix + "ban : ", "Bannir un utilisateur avec raison ou non", true)
+  /*
+   * Inline fields may not display as inline if the thumbnail and/or image is too big.
+   */
+  /*
+   * Blank field, useful to create some space.
+   */
+  .addBlankField(true)
+  
+  .addField(prefix + "ping", "Faire un ping", true)
+
+  message.channel.send({embed});
+}});
+
 
 
 Client.login(config.token)
