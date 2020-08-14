@@ -1,14 +1,13 @@
 //mise en place du bot
 const Discord = require ("discord.js");
-const Client = new Discord.Client; 
-const prefix = "$"; 
+const Client = new Discord.Client;
+const config = require('./config.json');
+const prefix = config.prefix; 
 
 Client.on("ready", () => {
     console.info("Bot opérationel")
     console.info(`[MAIN] Logged in as ${Client.user.tag}! [MAIN]`); // info log on utilise console.info
 });
-
-Client.login("Le_token")
 
 
 //les commandes
@@ -40,3 +39,7 @@ if (message.content.startsWith(prefix + "ban")) {
     member.kick()
     message.reply(`${member.user.tag} a etait banni par ${message.author.tag} pour raison: ${reason}`);
 }})
+
+
+
+Client.login(config.token)
