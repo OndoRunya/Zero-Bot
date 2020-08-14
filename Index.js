@@ -9,8 +9,22 @@ Client.on("ready", () => {
     console.info(`[MAIN] Logged in as ${Client.user.tag}! [MAIN]`); // info log on utilise console.info
 });
 
+client.once('reconnecting', () => {
+    console.info('Reconnecting!');
+});
+
+client.once('disconnect', () => {
+    console.info('Disconnect!');
+});
+
+
 
 //les commandes
+
+client.on("message", message => {
+if (message.content.startsWith(prefix + "ping")) {
+    message.channel.send("Pong");
+}});
 
 client.on("message", message => {
 if (message.content.startsWith(prefix + "kick")) {
