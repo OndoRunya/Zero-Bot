@@ -4,12 +4,12 @@ const Client = new Discord.Client;
 const prefix = "$"; 
 
 Client.on("ready", () => {
-    console.log("bot opérationel")
-  })
+    console.log("Bot opérationel")
+});
 
-  Client.on('ready', () => {
+Client.on('ready', () => {
     console.info(`[MAIN] Logged in as ${Client.user.tag}! [MAIN]`); // info log on utilise console.info
-        Client.user.setActivity("$help")
+    Client.user.setActivity("$help")
     console.info("L'activité joue a $help a bien était mise")
 });
 
