@@ -1,3 +1,4 @@
+// BOT
 //mise en place du bot
 const Discord = require ("discord.js");
 const Client = new Discord.Client; 
