@@ -8,6 +8,11 @@ npm install discord.js
 npm install canvas
 npm install nodemon --save-dev
 ```
+**OR**
+```
+./install.sh
+```
+
 ### Windows
 ```
 download nodejs https://nodejs.org/en/download/
