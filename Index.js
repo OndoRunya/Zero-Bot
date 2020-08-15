@@ -9,11 +9,11 @@ Client.on("ready", () => {
     console.info(`[MAIN] Logged in as ${Client.user.tag}! [MAIN]`); // info log on utilise console.info
 });
 
-client.once('reconnecting', () => {
+Client.once('reconnecting', () => {
     console.info('Reconnecting!');
 });
 
-client.once('disconnect', () => {
+Client.once('disconnect', () => {
     console.info('Disconnect!');
 });
 
@@ -21,12 +21,12 @@ client.once('disconnect', () => {
 
 //les commandes
 
-client.on("message", message => {
+Client.on("message", message => {
 if (message.content.startsWith(prefix + "ping")) {
     message.channel.send("Pong");
 }});
 
-client.on("message", message => {
+Client.on("message", message => {
 if (message.content.startsWith(prefix + "kick")) {
     if(!message.member.roles.some(r=>["Admin"].includes(r.name)) ) // on verifie les roles
       return null
@@ -40,7 +40,7 @@ if (message.content.startsWith(prefix + "kick")) {
     message.reply(`${member.user.tag} a etait kicker par ${message.author.tag} pour raison: ${reason}`);
 }})
 
-client.on("message", message => {
+Client.on("message", message => {
 if (message.content.startsWith(prefix + "ban")) {
     if(!message.member.roles.some(r=>["Admin"].includes(r.name)) ) // on verifie les roles
       return null
@@ -54,7 +54,7 @@ if (message.content.startsWith(prefix + "ban")) {
     message.reply(`${member.user.tag} a etait banni par ${message.author.tag} pour raison: ${reason}`);
 }})
 
-client.on("message", message => {
+Client.on("message", message => {
 if (message.content.startsWith(prefix + "help")) {
 const embed = new Discord.RichEmbed()
   .setTitle("Zero-Bot Help Link")
