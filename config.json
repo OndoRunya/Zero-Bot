@@ -1,4 +1,5 @@
 {
     "token": "le_token",
-    "prefix": "$"
+    "prefix": "$",
+    "join_channel": "welcome"
 }
