@@ -3,4 +3,7 @@
     "prefix": "$",
     "join_channel": "The welcome channel",
     "join_role": "The role to give for new player"
+    "clear_user_role": "The role of user can use the clear command"
+    "kick_user_role": "The role of user can use the kick command"
+    "ban_user_role": "The role of user can use the ban command"
 }
