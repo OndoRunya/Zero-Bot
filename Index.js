@@ -31,11 +31,14 @@ join_role = config.join_role
 client.on("guildMemberAdd", async (member) => {
     member.addRole(join_role);
 });
+
 //les commandes
 
 client.on("message", message => {
 if (message.content.startsWith(prefix + "ping")) {
-    message.channel.send("Pong");
+    var ping = Date.now() - message.createdTimestamp + " ms";
+    message.channel.sendMessage("Your ping is `" + `${Date.now() - message.createdTimestamp}` + " ms`");
+  }
 }});
 
 client.on("message", message => {
