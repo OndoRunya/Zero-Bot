@@ -10,6 +10,7 @@ npm install nodemon --save-dev
 ```
 **OR**
 ```
+chmod u+x install.sh
 ./install.sh
 ```
 
