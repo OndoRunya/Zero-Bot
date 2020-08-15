@@ -98,7 +98,8 @@ const embed = new Discord.RichEmbed()
 
   .addField(prefix + "server-info", "Montre les infos du serveur", true)
 
-  message.channel.send({embed});
+  message.channel.send("Je vous ai bien envoyé un DM")
+  message.author.send({embed});
 }});
 
 client.on("message", message => {
