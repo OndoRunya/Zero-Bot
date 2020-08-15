@@ -39,7 +39,7 @@ if (message.content.startsWith(prefix + "ping")) {
     var ping = Date.now() - message.createdTimestamp + " ms";
     message.channel.sendMessage("Your ping is `" + `${Date.now() - message.createdTimestamp}` + " ms`");
   }
-}});
+});
 
 client.on("message", message => {
 if (message.content.startsWith(prefix + "kick")) {
