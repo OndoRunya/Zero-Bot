@@ -1,19 +1,19 @@
 //mise en place du bot
 const Discord = require ("discord.js");
-const Client = new Discord.Client;
+const client = new Discord.Client;
 const config = require('./config.json');
 const prefix = config.prefix; 
 
-Client.on("ready", () => {
+client.on("ready", () => {
     console.info("Bot opérationel")
     console.info(`[MAIN] Logged in as ${Client.user.tag}! [MAIN]`); // info log on utilise console.info
 });
 
-Client.once('reconnecting', () => {
+client.once('reconnecting', () => {
     console.info('Reconnecting!');
 });
 
-Client.once('disconnect', () => {
+client.once('disconnect', () => {
     console.info('Disconnect!');
 });
 
@@ -21,12 +21,12 @@ Client.once('disconnect', () => {
 
 //les commandes
 
-Client.on("message", message => {
+client.on("message", message => {
 if (message.content.startsWith(prefix + "ping")) {
     message.channel.send("Pong");
 }});
 
-Client.on("message", message => {
+client.on("message", message => {
 if (message.content.startsWith(prefix + "kick")) {
     if(!message.member.roles.some(r=>["Admin"].includes(r.name)) ) // on verifie les roles
       return null
@@ -40,7 +40,7 @@ if (message.content.startsWith(prefix + "kick")) {
     message.reply(`${member.user.tag} a etait kicker par ${message.author.tag} pour raison: ${reason}`);
 }})
 
-Client.on("message", message => {
+client.on("message", message => {
 if (message.content.startsWith(prefix + "ban")) {
     if(!message.member.roles.some(r=>["Admin"].includes(r.name)) ) // on verifie les roles
       return null
@@ -54,7 +54,7 @@ if (message.content.startsWith(prefix + "ban")) {
     message.reply(`${member.user.tag} a etait banni par ${message.author.tag} pour raison: ${reason}`);
 }})
 
-Client.on("message", message => {
+client.on("message", message => {
 if (message.content.startsWith(prefix + "help")) {
 const embed = new Discord.RichEmbed()
   .setTitle("Zero-Bot Help Link")
@@ -85,4 +85,4 @@ const embed = new Discord.RichEmbed()
 
 
 
-Client.login(config.token)
+client.login(config.token)
