@@ -68,7 +68,7 @@ const embed = new Discord.RichEmbed()
 
   .setTimestamp()
   .setURL("https://discord.com/channels/733585317365547029/733585317365547032")
-  .addField(prefix + "clear (a venir) : ",
+  .addField(prefix + "clear : ",
     "Suprimmer de 1 a 99 message sur un channel specifique usage : $clear <nombre>")
     
     
@@ -82,6 +82,48 @@ const embed = new Discord.RichEmbed()
 
   message.channel.send({embed});
 }});
+
+client.on("message", message => {
+if (message.content.startsWith(prefix + "avatar")) {
+if (!message.mentions.users.size) {
+    return message.channel.send(`Ton avatar : ${message.author.displayAvatarURL}`);
+}
+    
+const avatar = message.mentions.users.map(user => {
+    return `${user.username}'s avatar: ${user.displayAvatarURL}`;
+});
+
+message.channel.send(avatar);
+}})
+
+client.on("message", message => {
+if (message.content.startsWith(prefix + "server-info")) {
+message.channel.send(`Nom du serveur: ${message.guild.name}\n Il y a ${message.guild.memberCount} utilisateur au total`);
+    message.guild.fetchMembers().then(fetchedGuild => {
+	    const totalOnline = fetchedGuild.members.filter(member => member.presence.status === 'online');
+	    message.channel.send(`Il y a ${totalOnline.size} utilisateur de connectés !`);
+	    const totalOffline = fetchedGuild.members.filter(member => member.presence.status === 'offline');
+	    message.channel.send(`Il y a ${totalOffline.size} utilisateur de déconnectés !`);
+});
+}})
+
+client.on("message", async message => {
+  if(message.author.bot) return;
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  
+    if(!message.member.roles.some(r=>["Admin"].includes(r.name)) )
+      return null
+
+if (message.content.startsWith(prefix + "clear")) {
+    
+    const deleteCount = parseInt(args[0], 10);
+    
+    if(!deleteCount || deleteCount < 1 || deleteCount > 99)
+      return message.reply("s'il te plaît, donne un nombre entre 1 et 99 pour les messages à supprimer !");
+    
+  }
+});
 
 
 
