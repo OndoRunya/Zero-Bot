@@ -3,6 +3,8 @@ const Discord = require ("discord.js");
 const client = new Discord.Client;
 const config = require('./config.json');
 const prefix = config.prefix
+const join_channel = config.join_channel
+const join_role = config.join_role
 
 client.on("ready", () => {
     console.info("Bot online")
@@ -17,20 +19,14 @@ client.once('disconnect', () => {
     console.info('Disconnect!');
 });
 
-join_channel = config.join_channel
 
 client.on("guildMemberAdd", member => {
   const channel = member.guild.channels.find(c => c.name === join_channel);
   if (!channel) return message.reply("Le channel configuré dans config.json n'existe pas");
-	
   channel.send(`Bienvenue sur le serveur ${member}. !`);
+  member.addRole(join_role);
 });
 
-join_role = config.join_role
-
-client.on("guildMemberAdd", async (member) => {
-    member.addRole(join_role);
-});
 
 //les commandes
 
@@ -94,6 +90,10 @@ const embed = new Discord.RichEmbed()
   .addBlankField(true)
   
   .addField(prefix + "ping", "Faire un ping", true)
+
+  .addField(prefix + "avatar", "Montre l'avatar de la personne mentionnée", true)
+
+  .addField(prefix + "server-info", "Montre les infos du serveur", true)
 
   message.channel.send({embed});
 }});
