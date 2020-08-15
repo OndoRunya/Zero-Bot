@@ -1,5 +1,6 @@
 {
     "token": "le_token",
     "prefix": "$",
-    "join_channel": "welcome"
+    "join_channel": "welcome",
+    "join_role": "744190977618477077"
 }
