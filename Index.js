@@ -5,8 +5,8 @@ const config = require('./config.json');
 const prefix = config.prefix
 
 client.on("ready", () => {
-    console.info("Bot opérationel")
-    console.info(`[MAIN] Logged in as ${Client.user.tag}! [MAIN]`); // info log on utilise console.info
+    console.info("Bot online")
+    console.info(`[MAIN] Logged in as ${Client.user.tag}! [MAIN]`);
 });
 
 client.once('reconnecting', () => {
@@ -15,6 +15,15 @@ client.once('reconnecting', () => {
 
 client.once('disconnect', () => {
     console.info('Disconnect!');
+});
+
+join_channel = config.join_channel
+
+client.on("guildMemberAdd", member => {
+  const channel = member.guild.channels.find(c => c.name === join_channel);
+  if (!channel) return message.reply("Le channel configuré dans config.json n'existe pas");
+	
+  channel.send(`Bienvenue sur le serveur ${member}. !`);
 });
 
 
