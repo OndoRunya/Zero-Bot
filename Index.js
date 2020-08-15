@@ -26,8 +26,11 @@ client.on("guildMemberAdd", member => {
   channel.send(`Bienvenue sur le serveur ${member}. !`);
 });
 
+join_role = config.join_role
 
-
+client.on("guildMemberAdd", async (member) => {
+    member.addRole(join_role);
+});
 //les commandes
 
 client.on("message", message => {
