@@ -5,6 +5,9 @@ const config = require('./config.json');
 const prefix = config.prefix
 const join_channel = config.join_channel
 const join_role = config.join_role
+const clear_user_role = config.clear_user_role
+const ban_user_role = config.ban_user_role
+const kick_user_role = config.kick_user_role
 
 client.on("ready", () => {
     console.info("Bot online")
@@ -39,7 +42,7 @@ if (message.content.startsWith(prefix + "ping")) {
 
 client.on("message", message => {
 if (message.content.startsWith(prefix + "kick")) {
-    if(!message.member.roles.some(r=>["Admin"].includes(r.name)) ) // on verifie les roles
+    if(!message.member.roles.some(r=>[kick_user_role].includes(r.name)) ) // on verifie les roles
       return null
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
@@ -53,7 +56,7 @@ if (message.content.startsWith(prefix + "kick")) {
 
 client.on("message", message => {
 if (message.content.startsWith(prefix + "ban")) {
-    if(!message.member.roles.some(r=>["Admin"].includes(r.name)) ) // on verifie les roles
+    if(!message.member.roles.some(r=>[ban_user_role].includes(r.name)) ) // on verifie les roles
       return null
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
@@ -127,7 +130,7 @@ client.on("message", async message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
-    if(!message.member.roles.some(r=>["Admin"].includes(r.name)) )
+    if(!message.member.roles.some(r=>[clear_user_role].includes(r.name)) )
       return null
 
 if (message.content.startsWith(prefix + "clear")) {
