@@ -1,6 +1,6 @@
 {
     "token": "le_token",
     "prefix": "$",
-    "join_channel": "welcome",
-    "join_role": "744190977618477077"
+    "join_channel": "The welcome channel",
+    "join_role": "The role to give for new player"
 }
