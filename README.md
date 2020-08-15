@@ -16,8 +16,12 @@ npm install discord.js
 npm install canvas
 npm install nodemon --save-dev
 ```
+### MacOS
+```
+download nodejs https://nodejs.org/en/download/
+```
 
-## Run (Available for Windows and Linux)
+## Run (Available for Windows and MacoOS and Linux)
 
 ```
 npm run dev
