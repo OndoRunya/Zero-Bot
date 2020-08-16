@@ -36,4 +36,6 @@ npm run dev
 # RELEASES
 
 
-## 1.0-Dev - 14 aout 2020 - Devloppement version
+## v1.0-Pre-Release - 14 aout 2020 - Devloppement version
+
+## v1.0 - 15 aout 2020 - Stable Version
