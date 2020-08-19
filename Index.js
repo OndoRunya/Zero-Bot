@@ -1,5 +1,6 @@
 //mise en place du bot
 const Discord = require ("discord.js");
+const Canvas = require('canvas');
 const client = new Discord.Client;
 const config = require('./config.json');
 const prefix = config.prefix
