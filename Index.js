@@ -4,11 +4,6 @@ const Canvas = require('canvas');
 const client = new Discord.Client;
 const config = require('./config.json');
 const prefix = config.prefix
-const join_channel = config.join_channel
-const join_role = config.join_role
-const clear_user_role = config.clear_user_role
-const ban_user_role = config.ban_user_role
-const kick_user_role = config.kick_user_role
 
 client.on("ready", () => {
     console.info("Bot online")
@@ -25,10 +20,10 @@ client.once('disconnect', () => {
 
 
 client.on("guildMemberAdd", member => {
-  const channel = member.guild.channels.find(c => c.name === join_channel);
+  const channel = member.guild.channels.find(c => c.name === config.join_channel);
   if (!channel) return message.reply("Le channel configuré dans config.json n'existe pas");
   channel.send(`Bienvenue sur le serveur ${member}. !`);
-  member.addRole(join_role);
+  member.addRole(config.join_role);
 });
 
 
@@ -43,7 +38,7 @@ if (message.content.startsWith(prefix + "ping")) {
 
 client.on("message", message => {
 if (message.content.startsWith(prefix + "kick")) {
-    if(!message.member.roles.some(r=>[kick_user_role].includes(r.name)) ) // on verifie les roles
+    if(!message.member.roles.some(r=>[config.kick_user_role].includes(r.name)) ) // on verifie les roles
       return null
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
@@ -57,7 +52,7 @@ if (message.content.startsWith(prefix + "kick")) {
 
 client.on("message", message => {
 if (message.content.startsWith(prefix + "ban")) {
-    if(!message.member.roles.some(r=>[ban_user_role].includes(r.name)) ) // on verifie les roles
+    if(!message.member.roles.some(r=>[config.ban_user_role].includes(r.name)) ) // on verifie les roles
       return null
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
@@ -132,7 +127,7 @@ client.on("message", async message => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
-    if(!message.member.roles.some(r=>[clear_user_role].includes(r.name)) )
+    if(!message.member.roles.some(r=>[config.clear_user_role].includes(r.name)) )
       return null
 
 if (message.content.startsWith(prefix + "clear")) {
