@@ -6,6 +6,7 @@
 ```
 npm install discord.js
 npm install canvas
+npm init -y
 npm install nodemon --save-dev
 ```
 **OR**
@@ -20,6 +21,7 @@ download nodejs https://nodejs.org/en/download/
 open windows terminal(cmd)
 npm install discord.js
 npm install canvas
+npm init -y
 npm install nodemon --save-dev
 ```
 ### MacOS
