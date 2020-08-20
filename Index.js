@@ -141,16 +141,14 @@ if (message.content.startsWith(prefix + "clear")) {
 });
 
 client.on('message', message => {
-if (message.content.startsWith(prefix + sondage)) {
+if (message.content.startsWith(prefix + "sondage")) {
     message.reply("voici le sondage, :thumbsup: si vous êtes pour, :thumbsdown: si vous êtes contre")
 }})
 
 client.on("message", message => {
-if(!message.member.roles.some(r=>["Rob1"].includes(r.name)) )  
-  return null
-	if (message.content === 'voici le sondage, :thumbsup: si vous êtes pour, :thumbsdown: si vous êtes contre') {
-	message.react(':thumbsup:');
-	message.react(':thumbsdown:');
+    if (message.content.includes(prefix + "sondage")) {
+        message.react(':thumbsup:');
+        message.react(':thumbsdown:');
 }})
 
 client.login(config.token)
