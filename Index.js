@@ -26,7 +26,7 @@ client.on("guildMemberAdd", member => {
 });
 
 
-//les commandes
+//Commands
 
 client.on("message", message => {
 if (message.content.startsWith(prefix + "ping")) {
@@ -37,7 +37,7 @@ if (message.content.startsWith(prefix + "ping")) {
 
 client.on("message", message => {
 if (message.content.startsWith(prefix + "kick")) {
-    if(!message.member.roles.some(r=>[config.kick_user_role].includes(r.name)) ) // on verifie les roles
+    if(!message.member.roles.some(r=>[config.kick_user_role].includes(r.name)) )
       return null
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
@@ -51,7 +51,7 @@ if (message.content.startsWith(prefix + "kick")) {
 
 client.on("message", message => {
 if (message.content.startsWith(prefix + "ban")) {
-    if(!message.member.roles.some(r=>[config.ban_user_role].includes(r.name)) ) // on verifie les roles
+    if(!message.member.roles.some(r=>[config.ban_user_role].includes(r.name)) )
       return null
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
@@ -93,7 +93,7 @@ const embed = new Discord.RichEmbed()
 
   .addField(prefix + "server-info", "Montre les infos du serveur", true)
 
-  message.channel.send("Je vous ai bien envoyé un DM")
+  message.channel.send("Je vous ai bien envoyé un DM") // Not now tested
   message.author.send({embed});
 }});
 
@@ -138,6 +138,9 @@ if (message.content.startsWith(prefix + "clear")) {
     
   }
 });
+
+
+// In devloppement
 
 client.on('message', message => {
 if (message.content.startsWith(prefix + "sondage")) {
