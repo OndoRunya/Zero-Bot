@@ -141,14 +141,19 @@ if (message.content.startsWith(prefix + "clear")) {
 
 // In devloppement
 
+sondage = prefix + "sondage"
+
 client.on('message', message => {
-if (message.content.startsWith(prefix + "sondage")) {
-    message.channel.send("Voici le sondage, :thumbsup: si vous êtes pour, :thumbsdown: si vous êtes contre")
-}})
+  if (message.content.includes(sondage)) {
+    UserMessage = message.content.substring(sondage.length)
+    message.channel.send("Voici le sondage :\n" + UserMessage + "\n :thumbsup: si vous êtes pour, :thumbsdown: si vous êtes contre")
+
+  }
+});
 
 client.on("message", message => {
     if (message.content.includes(prefix + "sondage")) {
-        message.react('👍');
+        message.react('👍'); 
         message.react('👎');
 }})
 
