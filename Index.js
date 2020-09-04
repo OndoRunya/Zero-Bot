@@ -148,8 +148,8 @@ if (message.content.startsWith(prefix + "sondage")) {
 
 client.on("message", message => {
     if (message.content.includes(prefix + "sondage")) {
-        message.react(':thumbsup:');
-        message.react(':thumbsdown:');
+        message.react('👍');
+        message.react('👎');
 }})
 
 client.login(config.token)
