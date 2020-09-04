@@ -173,9 +173,9 @@ const embed = new Discord.RichEmbed()
   .setTimestamp()
   .setURL("https://imgur.com/pXbFE37.jpg")
 
-.addField("Merci temakisushi: ", "Il a prit en charge la plus grande partie du développement du bot", true)
+.addField("temakisushi: ", "Devloper", true)
 	  
-.addField("Merci OndoRunya: ", "Il a l'idée du projet et a fait une petite partie du développement mais il s est surtout accuppé du disign du bot", true)
+.addField("OndoRunya: ", "Principal devloper", true)
 
 message.channel.send({embed})
 }})
