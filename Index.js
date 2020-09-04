@@ -75,7 +75,7 @@ const embed = new Discord.RichEmbed()
   .setThumbnail("https://imgur.com/pXbFE37.png")
 
   .setTimestamp()
-  .setURL("https://discord.com/channels/733585317365547029/733585317365547032")
+  .setURL("00000")
   .addField(prefix + "clear : ",
     "Suprimmer de 1 a 99 message sur un channel specifique usage : $clear <nombre>")
     
@@ -94,6 +94,7 @@ const embed = new Discord.RichEmbed()
 
   message.reply("Vous avez recu un DM")
   message.author.send({embed});
+  message.author.send("No reply message");
 }});
 
 client.on("message", message => {
@@ -171,11 +172,11 @@ const embed = new Discord.RichEmbed()
   .setThumbnail("https://imgur.com/pXbFE37.png")
 
   .setTimestamp()
-  .setURL("https://discord.com/channels/733585317365547029/733585317365547032")
+  .setURL("0000")
 
-.addField(Merci temakisushi: ", "Il a prix en charge la plus grande partie du développement du bot", true)
+.addField("Merci temakisushi: ", "Il a prit en charge la plus grande partie du développement du bot", true)
 	  
-.addField(Merci OndoRunya: ", "Il a l idée du projet et a fait une petite partie du développement mais il s est surtout accuppé du disign du bot", true)
+.addField("Merci OndoRunya: ", "Il a l idée du projet et a fait une petite partie du développement mais il s est surtout accuppé du disign du bot", true)
 }})
 
 client.login(config.token)
