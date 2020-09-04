@@ -168,7 +168,6 @@ const embed = new Discord.RichEmbed()
   .setColor(0x00AE86)
   .setDescription("Tout les remerciments pour la création de ce bot")
   .setFooter("Bot créer par OndoRunya & Temakisushi", "https://imgur.com/pXbFE37.png")
-  .setImage("https://imgur.com/pXbFE37.jpg")
   .setThumbnail("https://imgur.com/pXbFE37.png")
 
   .setTimestamp()
@@ -176,7 +175,7 @@ const embed = new Discord.RichEmbed()
 
 .addField("Merci temakisushi: ", "Il a prit en charge la plus grande partie du développement du bot", true)
 	  
-.addField("Merci OndoRunya: ", "Il a l idée du projet et a fait une petite partie du développement mais il s est surtout accuppé du disign du bot", true)
+.addField("Merci OndoRunya: ", "Il a l'idée du projet et a fait une petite partie du développement mais il s est surtout accuppé du disign du bot", true)
 
 message.channel.send({embed})
 }})
