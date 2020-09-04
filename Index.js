@@ -75,7 +75,7 @@ const embed = new Discord.RichEmbed()
   .setThumbnail("https://imgur.com/pXbFE37.png")
 
   .setTimestamp()
-  .setURL("https://discord.com/channels/733585317365547029/733585317365547032")
+  .setURL("000000")
   .addField(prefix + "clear : ",
     "Suprimmer de 1 a 99 message sur un channel specifique usage : $clear <nombre>")
     
