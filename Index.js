@@ -38,6 +38,8 @@ client.on("message", message => {
 if (message.content.startsWith(prefix + "kick")) {
     if(!message.member.roles.some(r=>[config.kick_user_role].includes(r.name)) )
       return null
+    if(config.kick_user_role == "The role of user can use the kick command")
+        message.reply("Il n'y a pas de role configure sur la command kick. Veuillez revoir 'config.json'")
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
       return message.reply("Le membre n'existe pas");
@@ -92,7 +94,7 @@ const embed = new Discord.RichEmbed()
 
   .addField(prefix + "server-info", "Montre les infos du serveur", true)
 
-  message.channel.send("Je vous ai bien envoyé un DM") // Not now tested
+  message.reply("Vous avez recu un DM")
   message.author.send({embed});
 }});
 
