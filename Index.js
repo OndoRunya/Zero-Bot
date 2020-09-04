@@ -75,7 +75,7 @@ const embed = new Discord.RichEmbed()
   .setThumbnail("https://imgur.com/pXbFE37.png")
 
   .setTimestamp()
-  .setURL("000000")
+  .setURL("https://discord.com/channels/733585317365547029/733585317365547032")
   .addField(prefix + "clear : ",
     "Suprimmer de 1 a 99 message sur un channel specifique usage : $clear <nombre>")
     
@@ -94,7 +94,6 @@ const embed = new Discord.RichEmbed()
 
   message.reply("Vous avez recu un DM")
   message.author.send({embed});
-  message.author.send("No reply message");
 }});
 
 client.on("message", message => {
@@ -152,10 +151,31 @@ client.on('message', message => {
   }
 });
 
+
 client.on("message", message => {
     if (message.content.includes(prefix + "sondage")) {
         message.react('👍'); 
         message.react('👎');
+}})
+
+client.on("message", message => {
+if (message.content.startsWith(prefix + "credit")) {
+const embed = new Discord.RichEmbed()
+  .setTitle("Zero-Bot crédit")
+  .setAuthor("Zero-Bot crédit", "https://imgur.com/pXbFE37.jpg")
+
+  .setColor(0x00AE86)
+  .setDescription("Tout les remerciments pour la création de ce bot")
+  .setFooter("Bot créer par OndoRunya & Temakisushi", "https://imgur.com/pXbFE37.png")
+  .setImage("https://imgur.com/pXbFE37.jpg")
+  .setThumbnail("https://imgur.com/pXbFE37.png")
+
+  .setTimestamp()
+  .setURL("https://discord.com/channels/733585317365547029/733585317365547032")
+
+.addField(Merci temakisushi: ", "Il a prix en charge la plus grande partie du développement du bot", true)
+	  
+.addField(Merci OndoRunya: ", "Il a l idée du projet et a fait une petite partie du développement mais il s est surtout accuppé du disign du bot", true)
 }})
 
 client.login(config.token)
