@@ -1,6 +1,11 @@
 # Zero-Bot
 
 ## How to install ?
+## Recommended to use this on linux :
+```
+chmod u+x install.sh
+./install.sh
+```
 
 ### Linux
 ```
