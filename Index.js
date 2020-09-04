@@ -94,6 +94,7 @@ const embed = new Discord.RichEmbed()
 
   message.reply("Vous avez recu un DM")
   message.author.send({embed});
+  message.author.send("No reply message");
 }});
 
 client.on("message", message => {
