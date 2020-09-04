@@ -75,7 +75,7 @@ const embed = new Discord.RichEmbed()
   .setThumbnail("https://imgur.com/pXbFE37.png")
 
   .setTimestamp()
-  .setURL("00000")
+  .setURL("https://imgur.com/pXbFE37.jpg")
   .addField(prefix + "clear : ",
     "Suprimmer de 1 a 99 message sur un channel specifique usage : $clear <nombre>")
     
@@ -172,11 +172,13 @@ const embed = new Discord.RichEmbed()
   .setThumbnail("https://imgur.com/pXbFE37.png")
 
   .setTimestamp()
-  .setURL("0000")
+  .setURL("https://imgur.com/pXbFE37.jpg")
 
 .addField("Merci temakisushi: ", "Il a prit en charge la plus grande partie du développement du bot", true)
 	  
 .addField("Merci OndoRunya: ", "Il a l idée du projet et a fait une petite partie du développement mais il s est surtout accuppé du disign du bot", true)
+
+message.channel.send({embed})
 }})
 
 client.login(config.token)
