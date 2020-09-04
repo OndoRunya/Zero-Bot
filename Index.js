@@ -143,7 +143,7 @@ if (message.content.startsWith(prefix + "clear")) {
 
 client.on('message', message => {
 if (message.content.startsWith(prefix + "sondage")) {
-    message.reply("voici le sondage, :thumbsup: si vous êtes pour, :thumbsdown: si vous êtes contre")
+    message.channel.send("Voici le sondage, :thumbsup: si vous êtes pour, :thumbsdown: si vous êtes contre")
 }})
 
 client.on("message", message => {
