@@ -142,10 +142,9 @@ if (message.content.startsWith(prefix + "clear")) {
 
 // In devloppement
 
-sondage = prefix + "sondage"
 
 client.on('message', message => {
-  if (message.content.includes(sondage)) {
+  if (message.content.includes(prefix + "sondage")) {
     UserMessage = message.content.substring(sondage.length)
     message.channel.send("Voici le sondage :\n" + UserMessage + "\n :thumbsup: si vous êtes pour, :thumbsdown: si vous êtes contre")
 
