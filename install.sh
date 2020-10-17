@@ -8,7 +8,8 @@ sudo npm install -g npm # update (using sudo)
 echo "Avez vous configurer votre token dans config.json ? Si oui (y) si non (n)"
 read a
 
-if [[ a == "y" ]]; then
+if [[ a == "y" ]]
+then
     npm run dev # run
 else
     echo "Annule (pour run : npm run dev)"
