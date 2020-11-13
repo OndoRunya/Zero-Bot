@@ -4,8 +4,8 @@ const config = require('./config.json');
 const prefix = config.prefix
 
 client.on("ready", () => {
-    console.info("Bot online")
-    console.info(`[MAIN] Logged in as ${client.user.tag}! [MAIN]`);
+    console.info("Bot Online")
+    console.info(`[MAIN] Run at ${client.user.tag}! [MAIN]`);
 });
 
 client.once('reconnecting', () => {
