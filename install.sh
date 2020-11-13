@@ -11,6 +11,9 @@ read a
 if [[ a == "y" ]]
 then
     npm run dev # run
-else
+elif [[ a == "n" ]]
+then
     echo "Annule (pour run : npm run dev)"
+else
+    echo "Je ne comprend pas"
 fi
