@@ -13,7 +13,7 @@ npm install discord.js
 npm init -y
 npm install nodemon --save-dev
 ```
-**OR**
+**OR (Recommended / Better)**
 ```
 chmod u+x install.sh
 ./install.sh
