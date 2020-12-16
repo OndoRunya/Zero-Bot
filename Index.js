@@ -1,6 +1,7 @@
 const Discord = require ("discord.js");
 const client = new Discord.Client;
 const config = require('./config.json');
+const config_2 = require('./enable_config.json');
 const prefix = config.prefix
 
 client.on("ready", () => {
