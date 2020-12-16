@@ -38,6 +38,14 @@ download nodejs https://nodejs.org/en/download/
 npm run dev
 ```
 
+
+## FOR DEV
+
+```
+Libre à vous de faire des merge request.
+Free to make merge request.
+```
+
 # RELEASES
 
 
