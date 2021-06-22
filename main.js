@@ -123,19 +123,19 @@ message.channel.send(`Nom du serveur: ${message.guild.name}\n Il y a ${message.g
 }})
 
 client.on("message", async message => {
+if (message.content.startsWith(prefix + "clear")) {
+
   if(message.author.bot) return;
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
     if(!message.member.roles.some(r=>[config.clear_user_role].includes(r.name)) )
       return null
-
-if (message.content.startsWith(prefix + "clear")) {
     
     const deleteCount = parseInt(args[0], 10);
     
     if(!deleteCount || deleteCount < 1 || deleteCount > 99)
-      return message.reply("s'il te plaît, donne un nombre entre 1 et 99 pour les messages à supprimer !");
+      return message.reply("S'il te plaît, donne un nombre entre 1 et 99 pour les messages à supprimer !");
     
   }
 });
@@ -146,6 +146,7 @@ if (message.content.startsWith(prefix + "clear")) {
 
 client.on('message', message => {
   if (message.content.includes(prefix + "sondage")) {
+    // Better with args
     UserMessage = message.content.substring(sondage.length)
     message.channel.send("Voici le sondage :\n" + UserMessage + "\n :thumbsup: si vous êtes pour, :thumbsdown: si vous êtes contre")
 
@@ -160,7 +161,7 @@ client.on("message", message => {
 }})
 
 client.on("message", message => {
-if (message.content.startsWith(prefix + "credit")) {
+if (message.content.startsWith(prefix + "credits")) {
 const embed = new Discord.RichEmbed()
   .setTitle("Zero-Bot crédit")
   .setAuthor("Zero-Bot crédit", "https://imgur.com/pXbFE37.jpg")
